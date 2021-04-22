@@ -32,12 +32,17 @@ if(backgroundImg){
     Engine.update(engine);
 
     if(hour < 12){
+        fill("BLACK");
+        textSize(30);
         text("TIME : "+hour % 12+" AM",200,100);
     }else{
+        fill("BLACK");
+        textSize(30);
         text("TIME : "+hour % 12+" PM",200,100);
     }
     // write code to display time in correct format here
-
+//console.log((hour >= 00 && hour <= 02))   //bg = "sunset11.png";
+//})
    // text("TIME : "+hour % 12+" AM",200,100);
 }
 
@@ -111,10 +116,8 @@ async function getBackgroundImg(){
         text("TIME : 11 PM",200,100);
         bg = "sunset10.png";
     }
-    else if(hour >= 24 && hour <= 02){
-        fill("BLACK");
-        textSize(30);
-        text("TIME : 1 AM",200,100);
+    else if(hour >= 00 && hour <= 02){
+        
         bg = "sunset11.png";
     }
     else if(hour >= 02 && hour <= 04){
